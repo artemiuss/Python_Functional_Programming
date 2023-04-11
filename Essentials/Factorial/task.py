@@ -1,7 +1,12 @@
 from typing import Callable
 
-from Essentials.Factorial.tail_recursion import tail_call_optimized
-
 
 def factorial_impl() -> Callable[[int], int]:
-    raise Exception('Implement me')
+    def fact(n: int) -> int:
+        if n == 0:
+            return 1
+        elif n < 3:
+            return n
+        else:
+            return n * fact(n-1)
+    return fact
